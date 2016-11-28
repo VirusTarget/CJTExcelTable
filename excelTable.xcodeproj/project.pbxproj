@@ -15,6 +15,7 @@
 		132555431DEC70F9002DFEE0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 132555411DEC70F9002DFEE0 /* LaunchScreen.storyboard */; };
 		1325554E1DEC70FA002DFEE0 /* excelTableTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 1325554D1DEC70FA002DFEE0 /* excelTableTests.m */; };
 		132555591DEC70FA002DFEE0 /* excelTableUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 132555581DEC70FA002DFEE0 /* excelTableUITests.m */; };
+		132555681DEC71D1002DFEE0 /* CJTExcelTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 132555671DEC71D1002DFEE0 /* CJTExcelTableView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +52,8 @@
 		132555541DEC70FA002DFEE0 /* excelTableUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = excelTableUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		132555581DEC70FA002DFEE0 /* excelTableUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = excelTableUITests.m; sourceTree = "<group>"; };
 		1325555A1DEC70FA002DFEE0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		132555661DEC71D1002DFEE0 /* CJTExcelTableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CJTExcelTableView.h; sourceTree = "<group>"; };
+		132555671DEC71D1002DFEE0 /* CJTExcelTableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CJTExcelTableView.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -105,6 +108,8 @@
 				132555371DEC70F9002DFEE0 /* AppDelegate.m */,
 				132555391DEC70F9002DFEE0 /* ViewController.h */,
 				1325553A1DEC70F9002DFEE0 /* ViewController.m */,
+				132555661DEC71D1002DFEE0 /* CJTExcelTableView.h */,
+				132555671DEC71D1002DFEE0 /* CJTExcelTableView.m */,
 				1325553C1DEC70F9002DFEE0 /* Main.storyboard */,
 				1325553F1DEC70F9002DFEE0 /* Assets.xcassets */,
 				132555411DEC70F9002DFEE0 /* LaunchScreen.storyboard */,
@@ -279,6 +284,7 @@
 				1325553B1DEC70F9002DFEE0 /* ViewController.m in Sources */,
 				132555381DEC70F9002DFEE0 /* AppDelegate.m in Sources */,
 				132555351DEC70F9002DFEE0 /* main.m in Sources */,
+				132555681DEC71D1002DFEE0 /* CJTExcelTableView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
