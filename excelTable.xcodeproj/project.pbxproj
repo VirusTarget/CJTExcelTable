@@ -436,7 +436,7 @@
 				DEVELOPMENT_TEAM = YPJR895ZNV;
 				INFOPLIST_FILE = excelTable/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = cjt.excelTable;
+				PRODUCT_BUNDLE_IDENTIFIER = cjt.test;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
@@ -448,7 +448,7 @@
 				DEVELOPMENT_TEAM = YPJR895ZNV;
 				INFOPLIST_FILE = excelTable/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = cjt.excelTable;
+				PRODUCT_BUNDLE_IDENTIFIER = cjt.test;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;
@@ -522,6 +522,7 @@
 				1325555F1DEC70FA002DFEE0 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		132555601DEC70FA002DFEE0 /* Build configuration list for PBXNativeTarget "excelTableTests" */ = {
 			isa = XCConfigurationList;
@@ -530,6 +531,7 @@
 				132555621DEC70FA002DFEE0 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		132555631DEC70FA002DFEE0 /* Build configuration list for PBXNativeTarget "excelTableUITests" */ = {
 			isa = XCConfigurationList;
@@ -538,6 +540,7 @@
 				132555651DEC70FA002DFEE0 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

@@ -137,15 +137,13 @@
             }
             
             //设置分割线
-            if (self.showSeparatorLine == titleOnly || self.showSeparatorLine == titleAndRow) {
-                [self setupTitleSeparatorLine];
-            }
+            [self setupTitleSeparatorLine];
             
         }
-        //设置底部分割线
+        
         if (self.showBottomLine == titleOnly || self.showBottomLine == titleAndRow) {
             UIView *bottomLine   =   [[UIView alloc] initWithFrame:CGRectMake(0, CGRectGetHeight(self.titleView.frame)-1, CGRectGetWidth(self.titleView.frame), 1)];
-            bottomLine.backgroundColor    =   [UIColor lightTextColor];
+            bottomLine.backgroundColor    =   [UIColor blackColor];
             [self.titleView addSubview:bottomLine];
         }
     }
@@ -153,15 +151,18 @@
 
 #pragma mark   标题分割线设置
 - (void)setupTitleSeparatorLine {
-    for (int i=0; i<self.titleLabels.count; i++) {
+    if (!(self.showSeparatorLine == titleOnly || self.showSeparatorLine == titleAndRow)) {
+        return;
+    }
+    for (int i=0; i<_widthArr.count-1; i++) {
         
         UILabel *title  =   self.titleLabels[i];
         
         UIView *line    =   [title viewWithTag:lineTag+i];
         [line removeFromSuperview];
         
-        line   =   [[UIView alloc] initWithFrame:CGRectMake(CGRectGetMaxX(title.frame)-2, 0, 2, _height)];
-        line.backgroundColor    =   [UIColor lightTextColor];
+        line   =   [[UIView alloc] initWithFrame:CGRectMake([_widthArr[i] doubleValue]-1, 0, 1, _height)];
+        line.backgroundColor    =   [UIColor blackColor];
         [title addSubview:line];
         line.tag   =   lineTag+i;
     }
@@ -186,7 +187,7 @@
 #pragma mark   配置行内容与尺寸
 - (UIView *)setupExcelRowViewWithTextArr:(NSArray *)array {
     double sum=0;
-    UIView *rowView =   [[UIView alloc] initWithFrame:CGRectMake(0, 0, self.frame.size.width, 45)];
+    UIView *rowView =   [[UIView alloc] initWithFrame:CGRectMake(0, 0, self.frame.size.width, self.tableView.rowHeight)];
     NSMutableArray *rowArray    =   [NSMutableArray array];
     for (int i=0; i<array.count; i++) {
         UILabel *rowLabel   =   [[UILabel alloc] initWithFrame:CGRectMake(sum, 0, [_widthArr[i] doubleValue], 45)];
@@ -203,10 +204,10 @@
         [self setupRowSeparatorLineWithRowArray:rowArray];
     }
     
-    //设置底部分割线
     if (self.showBottomLine == rowOnly || self.showBottomLine == titleAndRow) {
         UIView *bottomLine   =   [[UIView alloc] initWithFrame:CGRectMake(0, CGRectGetHeight(rowView.frame)-1, CGRectGetWidth(rowView.frame), 1)];
-        bottomLine.backgroundColor    =   [UIColor lightTextColor];
+        bottomLine.backgroundColor    =   [UIColor blackColor];
+        
         [rowView addSubview:bottomLine];
     }
     return rowView;
@@ -214,7 +215,7 @@
 
 - (UIView *)setupExcelRowViewWithViewArr:(NSArray *)array {
     double sum=0;
-    UIView *rowView =   [[UIView alloc] initWithFrame:CGRectMake(0, 0, self.frame.size.width, 45)];
+    UIView *rowView =   [[UIView alloc] initWithFrame:CGRectMake(0, 0, self.frame.size.width, self.tableView.rowHeight)];
     for (int i=0; i<array.count; i++) {
         UIView  *rowLabel   =   array[i];
         rowLabel.frame = CGRectMake(sum, 0, [_widthArr[i] doubleValue], 45);
@@ -229,7 +230,7 @@
     //设置底部分割线
     if (self.showBottomLine == rowOnly || self.showBottomLine == titleAndRow) {
         UIView *bottomLine   =   [[UIView alloc] initWithFrame:CGRectMake(0, CGRectGetHeight(rowView.frame)-1, CGRectGetWidth(rowView.frame), 1)];
-        bottomLine.backgroundColor    =   [UIColor lightTextColor];
+        bottomLine.backgroundColor    =   [UIColor blackColor];
         [rowView addSubview:bottomLine];
     }
     return rowView;
@@ -238,12 +239,14 @@
 #pragma mark    设置行分割
 - (void)setupRowSeparatorLineWithRowArray:(NSArray *)rowArray {
     
-    for (int i=0; i<rowArray.count; i++) {
+    for (int i=0; i<_widthArr.count-1; i++) {
         
         UILabel *rowLabel  =   rowArray[i];
         
-        UIView *line   =   [[UIView alloc] initWithFrame:CGRectMake(CGRectGetMaxX(rowLabel.frame)-1, 0, 1, CGRectGetHeight(rowLabel.frame))];
-        line.backgroundColor    =   [UIColor lightTextColor];
+        UIView *line   =   [[UIView alloc] initWithFrame:CGRectMake([_widthArr[i] doubleValue]-1, 0, 1, self.tableView.rowHeight)];
+        
+        line.backgroundColor    =   [UIColor blackColor];
+        
         [rowLabel addSubview:line];
     }
 }
@@ -261,7 +264,8 @@
     if (!_tableView) {
         
         _tableView    =   [[UITableView alloc] initWithFrame:CGRectMake(0, 44, self.frame.size.width, self.frame.size.height-44) style:1];
-        _tableView.sectionHeaderHeight  =   0.001;
+        _tableView.rowHeight    =   44;
+        
         [self addSubview:_tableView];
     }
     return _tableView;
